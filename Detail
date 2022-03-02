@@ -1,0 +1,13 @@
+Penjelasan modeling snowflake schema storepedia.io
+
+Kebutuhan terhadap jumlah transaksi pada tiap product per bulannya?
+Dapat menggunakan fact_transaction karena tersedia OrderID (order_qty dan order_amount) dapat dijumlahkan dan DateID digunakan untuk mengetahui transaksi perbulannya.
+
+Kebutuhan terhadap data lengkap user?
+Pada fact_transaction terdapat UserID yang terhubung ke dim_user yang memliki data lengkat user
+
+Kebutuhan terhadap list of product?
+Pada fact_transaction terdapat ProductID yang terhubung ke dim_product yang terhubung ke categori juga untuk list /category product.
+
+Kebutuhan terhadap dari mana user-user yang membeli produk ini berasal?
+Pada fact_transaction terdapat ProductID yang terhubung ke dim_product dan dim_product tersebut terhubung ke dim_location
